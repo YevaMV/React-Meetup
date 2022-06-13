@@ -1,4 +1,6 @@
 .main {
   margin: 3rem auto;
   max-width: 67rem;
+  display: flex;
+  justify-content: center;
 }
