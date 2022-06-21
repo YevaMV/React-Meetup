@@ -3,7 +3,7 @@ import { createContext, useState } from 'react';
 const FavoritesContext = createContext({
   favorites: [],
   totalFavorites: 0,
-  addFavorite: (favorite) => {},
+  addFavorite: (favoriteMeetup) => {},
   removeFavorite: (meetupId) => {},
   itemIsFavorite: (meetupId) => {},
 });
@@ -12,14 +12,14 @@ export function FavoritesContextProvider(props) {
   const [userFavorites, setUserFavorites] = useState([]);
 
   function addFavoriteHandler(favoriteMeetup) {
-    setUserFavorites((prevuserFavorites) => {
-      return prevuserFavorites.concat(favoriteMeetup);
+    setUserFavorites((prevUserFavorites) => {
+      return prevUserFavorites.concat(favoriteMeetup);
     });
   }
 
   function removeFavoriteHandler(meetupId) {
-    setUserFavorites((prevuserFavorites) => {
-      return prevuserFavorites.filter((meetup) => meetup.id !== meetupId);
+    setUserFavorites((prevUserFavorites) => {
+      return prevUserFavorites.filter((meetup) => meetup.id !== meetupId);
     });
   }
 
