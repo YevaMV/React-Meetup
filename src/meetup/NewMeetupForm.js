@@ -42,7 +42,12 @@ function NewMeetupForm(props) {
         </div>
         <div className={classes.control}>
           <label htmlFor="description">Description</label>
-          <textarea required id="description" ref={descriptionInputref} />
+          <textarea
+            required
+            id="description"
+            ref={descriptionInputref}
+            rows="5"
+          />
         </div>
         <div className={classes.actions}>
           <button>Add Meetup</button>

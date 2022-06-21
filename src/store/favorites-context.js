@@ -3,12 +3,15 @@ import { createContext, useState } from 'react';
 const FavoritesContext = createContext({
   favorites: [],
   totalFavorites: 0,
+  addFavorite: (favorite) => {},
+  removeFavorite: (meetupId) => {},
+  itemIsFavorite: (meetupId) => {},
 });
 
-function FavoritesContextProvider(props) {
+export function FavoritesContextProvider(props) {
   const [userFavorites, setUserFavorites] = useState([]);
 
-  function addfavoritehandler(favoriteMeetup) {
+  function addFavoriteHandler(favoriteMeetup) {
     setUserFavorites((prevuserFavorites) => {
       return prevuserFavorites.concat(favoriteMeetup);
     });
@@ -20,13 +23,16 @@ function FavoritesContextProvider(props) {
     });
   }
 
-  function itemFavoriteHandler(meetupId) {
+  function itemIsFavoriteHandler(meetupId) {
     return userFavorites.some((meetup) => meetup.id === meetupId);
   }
 
   const context = {
     favorites: userFavorites,
     totalFavorites: userFavorites.length,
+    addFavorite: addFavoriteHandler,
+    removeFavorite: removeFavoriteHandler,
+    itemIsFavorite: itemIsFavoriteHandler,
   };
 
   return (
@@ -36,4 +42,4 @@ function FavoritesContextProvider(props) {
   );
 }
 
-export default FavoritesContextProvider;
+export default FavoritesContext;
