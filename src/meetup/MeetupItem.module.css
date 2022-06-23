@@ -33,10 +33,16 @@
 }
 
 .actions {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
-.actions button {
+.favorite_button {
+  background-color: white;
+  border: none;
+}
+
+.more_button {
   font: inherit;
   cursor: pointer;
   color: rgb(246, 88, 88);
@@ -46,7 +52,7 @@
   border-radius: 4px;
 }
 
-.actions button:hover,
-.actions button:active {
-  background-color: #ffe2ed;
+.more_button:hover,
+.more_button:active {
+  background-color: rgb(255, 211, 211);
 }
