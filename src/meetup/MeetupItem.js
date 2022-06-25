@@ -30,14 +30,10 @@ function MeetupItem(props) {
   }
 
   const favoritesCtx = useContext(FavoritesContext);
+  const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
   let description = props.description;
   const max = 94;
-  if (description.length < max) {
-    return <p>{description}</p>;
-  }
-
-  const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
   function toggleFavoritesStatusHandler() {
     if (itemIsFavorite) {
@@ -65,11 +61,10 @@ function MeetupItem(props) {
           <div className={classes.content}>
             <h3>{props.title}</h3>
             <address>{props.address}</address>
-            {}
-            {showMore && (
-              <section>
-                <p>{`${description.substring(0, max)}...`} </p>
-              </section>
+            {showMore ? (
+              <p>{`${description.substring(0, max)}...`}</p>
+            ) : (
+              <p>{description}</p>
             )}
           </div>
           <div className={classes.actions}>
