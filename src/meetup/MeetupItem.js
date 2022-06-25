@@ -4,9 +4,20 @@ import Card from '../ui/Card';
 import FavoritesContext from '../store/favorites-context';
 import { IoIosHeartEmpty, IoIosHeart } from 'react-icons/io';
 import { IconContext } from 'react-icons';
+import CardForModal from '../ui/CardForModal';
 
 function MeetupItem(props) {
   const [showMore, setShowMore] = useState(true);
+  const [cardIsShown, setCardIsShown] = useState(false);
+
+  function showCardHandler() {
+    setCardIsShown(true);
+  }
+
+  function hideCardHandler() {
+    setCardIsShown(false);
+  }
+
   const favoritesCtx = useContext(FavoritesContext);
 
   let description = props.description;
@@ -31,7 +42,10 @@ function MeetupItem(props) {
     }
   }
   return (
-    <IconContext.Provider value={{ size: '3em', color: 'orange' }}>
+    <IconContext.Provider value={{ size: '3em', color: 'rgb(246, 88, 88)' }}>
+      {cardIsShown && (
+        <CardForModal description={description} onClose={hideCardHandler} />
+      )}
       <Card>
         <li className={classes.item}>
           <div className={classes.image}>
@@ -47,11 +61,8 @@ function MeetupItem(props) {
             )}
           </div>
           <div className={classes.actions}>
-            <button
-              className={classes.more_button}
-              onClick={() => setShowMore(!showMore)}
-            >
-              {showMore ? 'More' : 'Less'}
+            <button className={classes.more_button} onClick={showCardHandler}>
+              Read More
             </button>
             <button
               className={classes.favorite_button}
