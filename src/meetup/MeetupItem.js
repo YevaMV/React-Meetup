@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import classes from './MeetupItem.module.css';
 import Card from '../ui/Card';
 import FavoritesContext from '../store/favorites-context';
@@ -9,6 +9,17 @@ import CardForModal from '../ui/CardForModal';
 function MeetupItem(props) {
   const [showMore, setShowMore] = useState(true);
   const [cardIsShown, setCardIsShown] = useState(false);
+  const [showReadMoreButton, setshowReadMoreButton] = useState(false);
+
+  useEffect(() => {
+    showButton(true);
+  });
+
+  function showButton() {
+    if (description.length > max) {
+      setshowReadMoreButton(true);
+    }
+  }
 
   function showCardHandler() {
     setCardIsShown(true);
@@ -54,16 +65,19 @@ function MeetupItem(props) {
           <div className={classes.content}>
             <h3>{props.title}</h3>
             <address>{props.address}</address>
-            {showMore ? (
-              <p>{description.substring(0, max)} </p>
-            ) : (
-              <p>{description}</p>
+            {}
+            {showMore && (
+              <section>
+                <p>{`${description.substring(0, max)}...`} </p>
+              </section>
             )}
           </div>
           <div className={classes.actions}>
-            <button className={classes.more_button} onClick={showCardHandler}>
-              Read More
-            </button>
+            {showReadMoreButton && (
+              <button className={classes.more_button} onClick={showCardHandler}>
+                Read More
+              </button>
+            )}
             <button
               className={classes.favorite_button}
               onClick={toggleFavoritesStatusHandler}
