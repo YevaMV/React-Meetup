@@ -1,31 +1,24 @@
 .item {
-  width: 300px;
-  height: 470px;
-  margin: 20px;
+  margin: 1rem 0;
 }
 
 .image {
   width: 100%;
-  height: 200px;
+  height: auto;
   overflow: hidden;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
 }
 
 .image img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
-.content {
-  max-width: 100%;
-  height: 205px;
-  text-align: center;
-}
 
-/* .content p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-} */
+.content {
+  text-align: center;
+  padding: 1rem;
+}
 
 .content h3 {
   font-size: 1.25rem;
@@ -33,28 +26,21 @@
 }
 
 .actions {
-  display: flex;
-  justify-content: space-between;
+  padding: 1.5rem;
+  text-align: center;
 }
 
-.favorite_button {
-  background-color: white;
-  border: none;
-  position: absolute;
-  right: 20px;
-}
-
-.more_button {
+.actions button {
   font: inherit;
   cursor: pointer;
-  color: rgb(246, 88, 88);
-  border: 1px solid rgb(246, 88, 88);
+  color: #77002e;
+  border: 1px solid #77002e;
   background-color: transparent;
   padding: 0.5rem 1.5rem;
   border-radius: 4px;
 }
 
-.more_button:hover,
-.more_button:active {
-  background-color: rgb(255, 211, 211);
+.actions button:hover,
+.actions button:active {
+  background-color: #ffe2ed;
 }

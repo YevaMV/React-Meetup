@@ -4,7 +4,7 @@ import NewMeetupForm from '../meetup/NewMeetupForm';
 function CreateMeetup() {
   const navigate = useNavigate();
   function addMeetupHandler(meetupData) {
-    fetch('https://meetup2-9760b-default-rtdb.firebaseio.com/json', {
+    fetch('https://meetup2-9760b-default-rtdb.firebaseio.com/meetups.json', {
       method: 'POST',
       body: JSON.stringify(meetupData),
       headers: {
