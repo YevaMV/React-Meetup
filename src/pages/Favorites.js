@@ -12,6 +12,7 @@ function Favorites() {
   } else {
     content = <MeetupList meetups={favoriteCtx.favorites} />;
   }
+
   return (
     <section>
       <h1>My Favorites</h1>

@@ -1,20 +1,17 @@
 import { useEffect, useState } from 'react';
 import MeetupList from '../meetup/MeetupList';
 
-function AllMeetupsPage() {
+function AllMeetupsPage(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(
-      'https://react-meetup1-d1794-default-rtdb.firebaseio.com/meetups.json'
-    )
+    fetch('https://meetup2-9760b-default-rtdb.firebaseio.com/.json')
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         const meetups = [];
 
         for (const key in data) {
