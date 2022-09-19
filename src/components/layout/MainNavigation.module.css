@@ -49,3 +49,22 @@
   padding: 0 1rem;
   margin-left: 0.5rem;
 }
+
+.header button {
+  font: inherit;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.header a:hover {
+  color: rgb(126, 5, 5);
+}
+
+.header button:hover {
+  color: rgb(126, 5, 5);
+}
