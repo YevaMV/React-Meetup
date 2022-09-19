@@ -25,6 +25,9 @@ function MainNavigation() {
               </span>
             </Link>
           </li>
+          <li>
+            <Link to="/auth">Login</Link>
+          </li>
         </ul>
       </nav>
     </header>
