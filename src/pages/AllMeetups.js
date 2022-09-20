@@ -7,7 +7,7 @@ function AllMeetupsPage(props) {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch('https://meetup2-9760b-default-rtdb.firebaseio.com/meetups.json')
+    fetch('https://react-meetup-auth-default-rtdb.firebaseio.com/meetups.json')
       .then((response) => {
         return response.json();
       })
