@@ -39,7 +39,11 @@ const AuthForm = () => {
             setFormIsShown(false);
           } else {
             return res.json().then((data) => {
-              throw Error('Something went wrong, please try again!');
+              let errorMessage = 'Autentication failed!!!';
+              if (data && data.error && data.error.message) {
+                errorMessage = data.error.message;
+                throw Error(errorMessage);
+              }
             });
           }
         })
@@ -80,7 +84,7 @@ const AuthForm = () => {
               </button>
             </div>
           </form>
-          {error && <h1>{error}</h1>}
+          {error && <h1 className={classes['error-message']}>{error}</h1>}
         </section>
       )}
     </Fragment>
