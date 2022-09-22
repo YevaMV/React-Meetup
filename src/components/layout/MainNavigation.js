@@ -25,12 +25,12 @@ function MainNavigation() {
 
           {isLoggedIn && (
             <li>
-              <Link to="new-meetup">Create Meetup</Link>
+              <Link to="/new-meetup">Create Meetup</Link>
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to="favorites">
+              <Link to="/favorites">
                 Favorites
                 <span className={classes.badge}>
                   {favoriteCtx.totalFavorites}
