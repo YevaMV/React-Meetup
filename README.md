@@ -1,1 +1,1 @@
-# React-Meetup
+# Meetup application
