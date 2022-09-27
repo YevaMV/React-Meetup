@@ -3,11 +3,14 @@ import { useContext } from 'react';
 import Card from '../ui/Card';
 import classes from './MeetupItem.module.css';
 import FavoritesContext from '../store/favorites-context';
+import AuthContext from '../store/auth-context';
 
 function MeetupItem(props) {
   const favoritesCtx = useContext(FavoritesContext);
+  const authCtx = useContext(AuthContext);
 
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
+  const isLoggedIn = authCtx.isLoggedIn;
 
   function toggleFavoriteStatusHandler() {
     if (itemIsFavorite) {
@@ -34,11 +37,13 @@ function MeetupItem(props) {
           <address>{props.address}</address>
           <p>{props.description}</p>
         </div>
-        <div className={classes.actions}>
-          <button onClick={toggleFavoriteStatusHandler}>
-            {itemIsFavorite ? 'Remove from Favorites' : 'To Favorites'}
-          </button>
-        </div>
+        {isLoggedIn && (
+          <div className={classes.actions}>
+            <button onClick={toggleFavoriteStatusHandler}>
+              {itemIsFavorite ? 'Remove from Favorites' : 'To Favorites'}
+            </button>
+          </div>
+        )}
       </Card>
     </li>
   );
