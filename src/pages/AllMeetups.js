@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import MeetupList from '../meetup/MeetupList';
+import classes from './AllMeetups.module.css';
 
 function AllMeetupsPage(props) {
   const [isLoading, setIsLoading] = useState(true);

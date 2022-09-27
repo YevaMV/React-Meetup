@@ -12,11 +12,13 @@
 
 .image img {
   width: 100%;
+  height: 15rem;
   object-fit: cover;
 }
 
 .content {
   text-align: center;
+  height: 12rem;
   padding: 1rem;
 }
 

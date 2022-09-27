@@ -47,6 +47,7 @@ function NewMeetupForm(props) {
             id="description"
             ref={descriptionInputref}
             rows="5"
+            maxLength="183"
           />
         </div>
         <div className={classes.actions}>
