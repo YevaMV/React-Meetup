@@ -16,8 +16,6 @@ A user can also add interesting meetups to favorites and remove them from favori
 
 ### Project ScreenShots
 
----
-
 ![1](images/1.png)
 ![2](images/2.png)
 ![3](images/3.png)
