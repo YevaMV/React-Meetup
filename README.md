@@ -1,6 +1,22 @@
 # Meetup application
 
-### ScreenShots
+---
+
+This Meetup app is for creating and finding upcoming events.
+
+App was built with React JS.
+
+### Description
+
+---
+
+All upcoming Meetups are available to all the users, but for creating meetups, a user must sign up and authenticate with email and password, afterwards navigate to create meetup page.
+
+A user can also add interesting meetups to favorites and remove them from favorites by pressing the appropriate button․
+
+### Project ScreenShots
+
+---
 
 ---
 
